@@ -1,0 +1,30 @@
+services:
+  backend:
+    build: ./backend
+    container_name: whatsapp-backend
+    ports:
+      - "5001:5000"  # ← Porta externa mudou para 5001
+    environment:
+      - PORT=5000
+      - NODE_ENV=development
+      - CORS_ORIGIN=http://localhost:3000
+    env_file:
+      - ./backend/.env
+    networks:
+      - app-network
+
+  frontend:
+    build: ./frontend
+    container_name: whatsapp-frontend
+    ports:
+      - "3000:5173"
+    depends_on:
+      - backend
+    networks:
+      - app-network
+    stdin_open: true
+    tty: true
+
+networks:
+  app-network:
+    driver: bridge

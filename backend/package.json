@@ -1,0 +1,20 @@
+{
+  "name": "romance-cadastro-backend",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "server.js",
+  "scripts": {
+    "dev": "node --watch server.js",
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "cors": "^2.8.5",
+    "helmet": "^7.1.0",
+    "express-rate-limit": "^7.1.5",
+    "dotenv": "^16.3.1",
+    "twilio": "^4.20.0",
+    "pg": "^8.11.3",
+    "axios": "^1.6.2"
+  }
+}
